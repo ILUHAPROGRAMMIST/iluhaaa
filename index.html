@@ -6,16 +6,17 @@
     <title>Илья | Sirius Lyceum</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Pacifico&display=swap">
     <style>
-        /* Base Styles */
+        /* Яркие гавайские цвета */
         :root {
-            --primary: #3b82f6;
-            --secondary: #1d4ed8;
-            --dark: #1e3a8a;
-            --light: #f0f9ff;
-            --accent: #f59e0b;
-            --sand: #fef3c7;
-            --wave: #93c5fd;
-            --text: #1e3a8a;
+            --primary: #FF6B6B; /* Ярко-красный */
+            --secondary: #4ECDC4; /* Бирюзовый */
+            --dark: #292F36; /* Темно-синий */
+            --light: #F7FFF7; /* Светло-кремовый */
+            --accent: #FFE66D; /* Желтый */
+            --hibiscus: #FF1654; /* Розовый (цвет гибискуса) */
+            --sunset: #FF9F1C; /* Оранжевый заката */
+            --wave: #6BFFB8; /* Цвет волны */
+            --text: #292F36;
             --text-light: #64748b;
         }
 
@@ -27,105 +28,118 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(to bottom, var(--light), var(--wave));
+            background: linear-gradient(to bottom, var(--sunset), var(--primary), var(--secondary));
             color: var(--text);
             line-height: 1.6;
             min-height: 100vh;
             background-attachment: fixed;
         }
 
-        /* Header */
+        /* Шапка с гавайским стилем */
         header {
             text-align: center;
-            padding: 2rem 0;
+            padding: 3rem 0;
             position: relative;
             overflow: hidden;
             margin-bottom: 2rem;
-            background-color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(247, 255, 247, 0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid var(--accent);
         }
 
         header::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -15px;
             left: 0;
             width: 100%;
-            height: 20px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%233b82f6'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%233b82f6'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%233b82f6'/%3E%3C/svg%3E");
+            height: 30px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23FF6B6B'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23FF6B6B'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23FF6B6B'/%3E%3C/svg%3E");
             background-size: cover;
             z-index: 1;
         }
 
+        /* Центрированная надпись SIRIUS */
         h6 {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
+            font-size: 1rem;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
+            color: var(--text);
+            margin: 0 auto 1rem;
+            background-color: var(--accent);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            width: auto;
+            font-weight: 700;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
             margin: 1rem auto;
             color: var(--dark);
             position: relative;
-            display: inline-block;
+            display: block;
             text-align: center;
             width: 100%;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
 
         h1.title {
             font-family: 'Pacifico', cursive;
-            color: var(--primary);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            color: var(--hibiscus);
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
         }
 
         h1::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 2px;
+            width: 100px;
+            height: 6px;
+            background: linear-gradient(90deg, var(--hibiscus), var(--accent));
+            border-radius: 3px;
         }
 
         h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--text);
             max-width: 800px;
-            margin: 1rem auto;
-            padding: 0 1rem;
+            margin: 1.5rem auto;
+            padding: 0 1.5rem;
+            line-height: 1.7;
         }
 
-        /* Gallery */
+        /* Галерея с гавайским стилем */
         .gallery-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem;
-            padding: 1rem;
+            gap: 1.5rem;
+            padding: 2rem;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .gallery-item {
-            flex: 1 1 300px;
+            flex: 1 1 350px;
             max-width: 100%;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 3px solid white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            border: 5px solid white;
             background-color: white;
         }
 
         .gallery-item.large {
-            flex: 2 1 600px;
+            flex: 2 1 700px;
         }
 
         .gallery-item img {
@@ -136,46 +150,48 @@
         }
 
         .gallery-item:hover {
-            transform: translateY(-10px) rotate(1deg);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
         }
 
         .gallery-item:hover img {
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
-        /* Music Section */
+        /* Музыкальная секция */
         .music-section {
             text-align: center;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(235, 245, 255, 0.8) 100%);
-            border-radius: 20px;
-            margin: 3rem auto;
-            padding: 2rem;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 25px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
             max-width: 1200px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 3px solid var(--accent);
         }
 
         .music-section::before {
             content: '♪';
             position: absolute;
-            font-size: 10rem;
-            opacity: 0.05;
-            right: 20px;
+            font-size: 12rem;
+            opacity: 0.1;
+            right: 30px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 0;
         }
 
-        /* Footer */
+        /* Подвал с выделенным текстом */
         footer {
             background-color: var(--dark);
             color: var(--light);
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
             margin-top: 2rem;
             position: relative;
+            border-top: 5px solid var(--accent);
         }
 
         footer::before {
@@ -184,92 +200,91 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 20px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23fef3c7'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23fef3c7'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23fef3c7'/%3E%3C/svg%3E");
+            height: 30px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23FFE66D'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23FFE66D'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23FFE66D'/%3E%3C/svg%3E");
             background-size: cover;
             transform: rotate(180deg);
         }
 
+        footer h3 {
+            color: var(--accent); /* Желтый цвет для текста в подвале */
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Бегущая строка с гавайскими элементами */
         .marquee {
             overflow: hidden;
             white-space: nowrap;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             position: relative;
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 10px 0;
+            background-color: rgba(255, 230, 109, 0.2);
+            padding: 15px 0;
             border-radius: 50px;
+            border: 2px dashed var(--hibiscus);
         }
 
         .marquee-content {
             display: inline-block;
-            animation: marquee 15s linear infinite;
+            animation: marquee 12s linear infinite;
         }
 
         .marquee span {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--accent);
-            margin: 0 1rem;
+            margin: 0 1.5rem;
             position: relative;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
 
         .marquee span::after {
-            content: '🌊';
+            content: '🌺';
             position: absolute;
-            right: -1rem;
-            color: var(--light);
-            opacity: 0.5;
+            right: -1.5rem;
+            color: var(--hibiscus);
+            opacity: 0.8;
         }
 
-        /* Decorative elements */
-        .shell {
-            position: absolute;
-            opacity: 0.1;
-            z-index: -1;
-        }
-
-        /* Animations */
+        /* Анимации */
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        /* Responsive */
+        /* Адаптивность */
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
-
+            
+            h1.title {
+                font-size: 2.5rem;
+            }
+            
             h3 {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
-
+            
             .gallery-item {
                 flex: 1 1 100%;
             }
-
+            
             .music-section::before {
-                font-size: 5rem;
-                right: 10px;
+                font-size: 8rem;
+                opacity: 0.05;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h6>SIRIUS LYCEUM</h6>
+        <h6>SIRIUS</h6>
         <h1 class="title">АЛО САЙТ, ДА ДА КРЕАТИВ</h1>
     </header>
 
     <main>
         <section>
-            <h6>SIRIUS</h6>
             <h1>Давайте познакомимся</h1>
             <h3>Меня зовут Илья, я приехал из Астрахани. В прошлом году я был на смене на этом же направлении, занятия в лицее во многом помогли мне со школьным проектом в 10 классе.</h3>
         </section>
@@ -309,13 +324,13 @@
         <div class="marquee">
             <div class="marquee-content">
                 <span>Сириус 2025</span>
+                <span>Алоха!</span>
                 <span>Сириус 2025</span>
+                <span>Укулеле</span>
                 <span>Сириус 2025</span>
+                <span>Гавайи</span>
                 <span>Сириус 2025</span>
-                <span>Сириус 2025</span>
-                <span>Сириус 2025</span>
-                <span>Сириус 2025</span>
-                <span>Сириус 2025</span>
+                <span>Маракасы</span>
             </div>
         </div>
     </footer>
