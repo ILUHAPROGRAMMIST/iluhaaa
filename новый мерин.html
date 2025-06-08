@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Илья | Sirius Lyceum</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Pacifico&display=swap">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #3b82f6;
+            --secondary: #1d4ed8;
+            --dark: #1e3a8a;
+            --light: #f0f9ff;
+            --accent: #f59e0b;
+            --sand: #fef3c7;
+            --wave: #93c5fd;
+            --text: #1e3a8a;
+            --text-light: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(to bottom, var(--light), var(--wave));
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%233b82f6'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%233b82f6'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%233b82f6'/%3E%3C/svg%3E");
+            background-size: cover;
+            z-index: 1;
+        }
+
+        h6 {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 1rem auto;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+        h1.title {
+            font-family: 'Pacifico', cursive;
+            color: var(--primary);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--text);
+            max-width: 800px;
+            margin: 1rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Gallery */
+        .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            flex: 1 1 300px;
+            max-width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 3px solid white;
+            background-color: white;
+        }
+
+        .gallery-item.large {
+            flex: 2 1 600px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Music Section */
+        .music-section {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(235, 245, 255, 0.8) 100%);
+            border-radius: 20px;
+            margin: 3rem auto;
+            padding: 2rem;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .music-section::before {
+            content: '♪';
+            position: absolute;
+            font-size: 10rem;
+            opacity: 0.05;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23fef3c7'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23fef3c7'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23fef3c7'/%3E%3C/svg%3E");
+            background-size: cover;
+            transform: rotate(180deg);
+        }
+
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            margin-top: 1rem;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px 0;
+            border-radius: 50px;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+        }
+
+        .marquee span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 0 1rem;
+            position: relative;
+        }
+
+        .marquee span::after {
+            content: '🌊';
+            position: absolute;
+            right: -1rem;
+            color: var(--light);
+            opacity: 0.5;
+        }
+
+        /* Decorative elements */
+        .shell {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        /* Animations */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+
+            .gallery-item {
+                flex: 1 1 100%;
+            }
+
+            .music-section::before {
+                font-size: 5rem;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h6>SIRIUS LYCEUM</h6>
+        <h1 class="title">АЛО САЙТ, ДА ДА КРЕАТИВ</h1>
+    </header>
+
+    <main>
+        <section>
+            <h6>SIRIUS</h6>
+            <h1>Давайте познакомимся</h1>
+            <h3>Меня зовут Илья, я приехал из Астрахани. В прошлом году я был на смене на этом же направлении, занятия в лицее во многом помогли мне со школьным проектом в 10 классе.</h3>
+        </section>
+
+        <div class="gallery-container">
+            <div class="gallery-item large">
+                <img src="https://optim.tildacdn.pub/tild6332-6163-4661-b461-383934656232/-/format/webp/42af70ce-6b1c-4f1b-8.jpg.webp" alt="Фото 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://optim.tildacdn.pub/tild6138-3634-4234-b239-333434623830/-/format/webp/e710db6c-ace6-4853-8.jpg.webp" alt="Фото 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://optim.tildacdn.pub/tild6161-6161-4763-b736-333037306133/-/format/webp/48c4a95e-6031-4cf3-9.jpg.webp" alt="Фото 3">
+            </div>
+        </div>
+
+        <section class="music-section">
+            <h1>Я ОБОЖАЮ МУЗЫКУУУУУУ</h1>
+            <h3>Играю на музыкальных инструментах (гитара, бас, синтезатор) и записываю свою музыку, занимаюсь шахматами и плаванием, в свободное время люблю смотреть фильмы и сериалы.</h3>
+        </section>
+
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://optim.tildacdn.pub/tild6263-3865-4138-b663-366234376264/-/format/webp/b8bbd88d-55b5-4545-a.jpg.webp" alt="Фото 4">
+            </div>
+            <div class="gallery-item">
+                <img src="https://optim.tildacdn.pub/tild6265-6263-4037-a334-613464646365/-/format/webp/004b40ca-1a09-4fb9-8.jpg.webp" alt="Фото 5">
+            </div>
+            <div class="gallery-item">
+                <img src="https://optim.tildacdn.pub/tild6335-6639-4637-b831-373631633839/-/format/webp/f79eadf3-62c1-4e62-9.jpg.webp" alt="Фото 6">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h3>На смене хочу хорошенько отдохнуть от тяжелого учебного года и освежить в памяти HTML.</h3>
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>Сириус 2025</span>
+                <span>Сириус 2025</span>
+                <span>Сириус 2025</span>
+                <span>Сириус 2025</span>
+                <span>Сириус 2025</span>
+                <span>Сириус 2025</span>
+                <span>Сириус 2025</span>
+                <span>Сириус 2025</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
